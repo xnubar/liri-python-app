@@ -24,7 +24,7 @@ def search_song(search_text):
 
 
     track = search_text and search_text or default_song
-    res = s.search(track, type="track", market=market, limit=1)
+    res = s.search(track, type="track", market=market, limit=10)
     song_info(res)
 
 
@@ -40,9 +40,11 @@ def song_info(song):
             preview_link = item["preview_url"] and item["preview_url"] or "None"
 
             result_str = "Artist: " + artist + ";" "Name of song: "+song_name + ";" + "Preview link: " + preview_link + ";" + "Album name: " + album
-            
+
             print("_______________________________________________\n")
             for item in result_str.split(";"):
                  print(item)
             print("_______________________________________________")
         fileio.write_to_file(result_str.replace(";","\n"))
+    else:
+        print("Song not found!")
