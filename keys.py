@@ -1,4 +1,4 @@
-impot os
+import os
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -14,4 +14,9 @@ twitter = {
 spotify = {
   "id": os.getenv("SPOTIFY_ID"),
   "secret": os.getenv("SPOTIFY_SECRET")
+}
+
+omdb = {
+  "apikey" : os.getenv("OMDB_KEY"),
+  "url":os.getenv("OMDB_URL")
 }
