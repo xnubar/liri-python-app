@@ -1,4 +1,4 @@
-import fileio
+from fileio import write_to_file
 import spotipy
 import spotipy.util as util
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -45,6 +45,6 @@ def song_info(song):
             for item in result_str.split(";"):
                  print(item)
             print("_______________________________________________")
-        fileio.write_to_file(result_str.replace(";","\n"))
+        write_to_file(result_str.replace(";","\n"))
     else:
         print("Song not found!")
